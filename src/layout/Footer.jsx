@@ -10,15 +10,15 @@ const Footer = () => {
                 <footer className="footer max-w-7xl mx-auto text-white
                 
                 ">
-
                     <div>
                         <div >
                         <img className=" ml-24 w-[70px] h-[70px] rounded" src="https://i.ibb.co/qCD249w/electronic-logo-260nw-737605000.jpg" alt="" />
                         </div>
-                        <div className="text-center text-white">
+                        <div className=" text-white">
                             
                             <h1 className="ml-5 mb-6 font-bold text-4xl text-[#ea580c] font-berkshire">rf-Technology</h1>
-                            <h1>---------msetu5763@gmail.com-----------</h1>
+                            <p className="lg:mr-20">Electronics is a subfield of electrical engineering, <br /> but it differs from it in that it focuses on <br /> using active devices such as transistors, diodes, <br /> and integrated circuits to control and amplify </p>
+                            <h1 className="mt-5">---------msetu5763@gmail.com-----------</h1>
                         </div>
                     </div>
                     <nav>

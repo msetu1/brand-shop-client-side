@@ -4,11 +4,11 @@ const AddProduct = () => {
     return (
         <div>
             <div className="bg-[#1e293b]">
-            <Navbar></Navbar>
+                <Navbar></Navbar>
             </div>
             <div className="min-h-screen mb-20">
                 <div className="max-w-6xl mx-auto  bg-[#1e293b] rounded-lg  px-8">
-                    <div className="text-center my-10 pt-16">
+                    <div className="text-center mt-10 mb-5 pt-16">
                         <h1 className="text-4xl font-bold text-white">Add Product</h1>
                     </div>
                     <form>
@@ -47,29 +47,6 @@ const AddProduct = () => {
                             </div>
                             <div className="form-control w-full ">
                                 <label className="label">
-                                    <span className="label-text text-xl font-semibold text-white">Short Description :</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    name="description"
-                                    placeholder="Your description"
-                                    className="input input-bordered w-full bg-[#dbeafe]" />
-                            </div>
-                        </div>
-                        <div className="flex gap-4 mt-6 flex-col md:flex-row">
-                            <div className="form-control w-full ">
-                                <label className="label">
-                                    <span className="label-text text-xl font-semibold text-white">Price :</span>
-                                </label>
-
-                                <input
-                                    type="text"
-                                    name="price"
-                                    placeholder="Price"
-                                    className="input input-bordered bg-[#dbeafe]" />
-                            </div>
-                            <div className="form-control w-full ">
-                                <label className="label">
                                     <span className="label-text text-xl font-semibold text-white">Rating :</span>
                                 </label>
                                 <input
@@ -79,17 +56,38 @@ const AddProduct = () => {
                                     className="input input-bordered w-full bg-[#dbeafe]" />
                             </div>
                         </div>
-                        <div className="mt-6">
+                        <div className="flex gap-4 flex-col md:flex-row">
                             <div className="form-control w-full ">
                                 <label className="label">
-                                    <span className="label-text text-xl font-semibold text-white">Photo Name :</span>
+                                    <span className="label-text text-xl font-semibold text-white">Price :</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="price"
+                                    placeholder="Price"
+                                    className="input input-bordered bg-[#dbeafe]" />
+                            </div>
+                            <div className="form-control w-full ">
+                                <label className="label">
+                                    <span className="label-text text-xl font-semibold text-white">Photo URL :</span>
                                 </label>
                                 <input
                                     type="text"
                                     name="photo"
-                                    placeholder="Photo Url"
+                                    placeholder="Photo URL"
                                     className="input input-bordered w-full bg-[#dbeafe]" />
                             </div>
+                        </div>
+                       
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text text-xl font-semibold text-white">Short Description :</span>
+                            </label>
+                            <input
+                                type="text"
+                                name="description"
+                                placeholder="Your description"
+                                className="input input-bordered w-full bg-[#dbeafe]" />
                         </div>
                         <div className=" pb-10 mb-10 w-full flex justify-center">
                             <input

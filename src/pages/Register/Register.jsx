@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
 import Navbar from "../../layout/Navbar";
-
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 const Register = () => {
+    const {createUser}=useContext(AuthContext)
     const handleRegister = e => {
         e.preventDefault()
         const form = new FormData(e.currentTarget);
@@ -10,6 +12,28 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(name, photo, email, password);
+
+        // if (password.length < 6) {
+        //     toast.error('Please password must be at least 6 caracters')
+        //     return
+        // }
+        // else if (!/[A-Z]/.test(password)) {
+        //     toast.error('Your password have at least one uper case charecters');
+        //     return;
+        // }
+        // else if (!/[a-z]/.test(password)) {
+        //     toast.error('Your password have at least one lower case charecters')
+        //     return
+        // }
+// create user 
+        createUser(email,password)
+        .then(result=>{
+            console.log(result.user);
+        })
+        .catch(error=>{
+            console.error(error);
+        })
+
     }
     return (
         <div>

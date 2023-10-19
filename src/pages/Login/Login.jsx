@@ -3,6 +3,13 @@ import { FcGoogle } from "react-icons/fc";
 import Navbar from "../../layout/Navbar";
 
 const Login = () => {
+    const handleLogin=e=>{
+        e.preventDefault()
+        const form =new FormData(e.currentTarget);
+        const email =form.get('email');
+        const password =form.get('password');
+        console.log(email,password);
+    }
     return (
         <div>
             <div className="bg-[#1e293b]">
@@ -15,7 +22,7 @@ const Login = () => {
                         <div className="text-center ">
                             <h1 className="text-5xl pt-8 font-bold"> Please Login <span className="text-[#ea580c]">now</span></h1>
                         </div>
-                        <form className="card-body">
+                        <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-white font-semibold text-xl">Email</span>
@@ -23,7 +30,7 @@ const Login = () => {
                                 <input type="email"
                                  placeholder="email" 
                                  name="email"
-                                className="input input-bordered bg-[#dbeafe]" required />
+                                className="input input-bordered bg-[#dbeafe]" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -32,7 +39,7 @@ const Login = () => {
                                 <input 
                                 type="password"
                                 name="password"
-                                 placeholder="password" className="input input-bordered bg-[#dbeafe]" required />
+                                 placeholder="password" className="input input-bordered bg-[#dbeafe] text-black"  />
                                 
                             </div>
                             <div className="form-control mt-6">
@@ -44,7 +51,7 @@ const Login = () => {
                                 </div>
                             </NavLink>
                             <div>
-                                <h1 className=" font-semibold mb-3 text-base">Don't have an account? <NavLink
+                                <h1 className=" font-semibold mb-3 text-base">Don't have an account ? <NavLink
                                     to="/register"
                                     className={({ isActive, isPending }) =>
                                         isPending ? "pending" : isActive ? "" : "underline underline-offset-2  text-[#ea580c] font-bold text-2xl"

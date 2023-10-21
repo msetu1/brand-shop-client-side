@@ -21,11 +21,11 @@ const XiaomiCard = ({ xiaomi }) => {
                     <p>{shortDescription}</p>
                     <div className="flex items-center justify-between mb-3">
                         <div className="form-control mt-6">
-                            <button className="text-xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Details button</button>
+                            <button className="text-xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Details </button>
                         </div>
                         <div>
                             <div className="form-control mt-6">
-                                <button className="text-xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Update button</button>
+                                <button className="text-xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Update </button>
                             </div>
                         </div>
                     </div>

@@ -1,25 +1,33 @@
-import { NavLink } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
+import { NavLink, useNavigate } from "react-router-dom";
 import Navbar from "../../layout/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../../components/SocialLogin";
+import toast from "react-hot-toast";
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext)
-    
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+
     const handleLogin = e => {
         e.preventDefault()
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
         console.log(email, password);
+
         signIn(email, password)
-            .then(result => {
-                console.log(result.user);
-            })
-            .catch(error => {
-                console.error(error);
-            })
+        .then(result => {
+            console.log(result);
+            toast.success('Login account is successfully')
+            navigate(location?.state ? location.state : '/')
+
+        })
+        .catch(error => {
+            console.error(error)
+            toast.error('Invalid email and password', error.message);
+        })
+
 
     }
     return (
@@ -57,11 +65,7 @@ const Login = () => {
                                 <div className="form-control mt-6">
                                     <button className="text-2xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Login</button>
                                 </div>
-                                <NavLink>
-                                    <div className="mt-3 flex justify-center border border-[#ea580c] rounded-full py-3">
-                                        <h1 className="text-2xl font-semibold flex items-center gap-5 "><FcGoogle></FcGoogle> Google</h1>
-                                    </div>
-                                </NavLink>
+                                <SocialLogin></SocialLogin>
                                 <div>
                                     <h1 className=" font-semibold mb-3 text-base">Don't have an account ? <NavLink
                                         to="/register"

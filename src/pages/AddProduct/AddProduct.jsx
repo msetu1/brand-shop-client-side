@@ -1,6 +1,43 @@
+
+import Swal from "sweetalert2";
 import Navbar from "../../layout/Navbar";
 
 const AddProduct = () => {
+    const handleAddProduct=e=>{
+        e.preventDefault();
+        const form =e.target;
+        const name =form.name.value;
+        const brandName =form.brandName.value;
+        const type =form.type.value;
+        const rating =form.rating.value;
+        const price =form.price.value;
+        const description =form.description.value;
+        const photo =form.photo.value;
+
+        const newProducts={name,brandName,type,rating,price,description,photo}
+    console.log(newProducts);
+
+    fetch('http://localhost:5000/product',{
+        method:'POST',
+        headers:{
+            'content-type':'application/json'
+        },
+        body:JSON.stringify(newProducts)
+    })
+.then(res=>res.json())
+.then(data=>{
+    console.log(data);
+    if(data.insertedId){
+        Swal.fire({
+            title: 'Success',
+            text: 'User add product added Successfully',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
+    }
+})
+
+    }
     return (
         <div>
             <div className="bg-[#1e293b]">
@@ -11,7 +48,7 @@ const AddProduct = () => {
                     <div className="text-center mt-10 mb-5 pt-16">
                         <h1 className="text-4xl font-bold text-white">Add Product</h1>
                     </div>
-                    <form>
+                    <form onSubmit={handleAddProduct}>
                         <div className="flex gap-4 mb-6 flex-col md:flex-row">
                             <div className="form-control w-full ">
                                 <label className="label">
@@ -29,7 +66,7 @@ const AddProduct = () => {
                                 </label>
                                 <input
                                     type="text"
-                                    name="brand"
+                                    name="brandName"
                                     placeholder="Brand Name"
                                     className="input input-bordered w-full bg-[#dbeafe]" />
                             </div>

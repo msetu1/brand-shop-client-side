@@ -80,7 +80,13 @@ const Navbar = () => {
                     <div className="navbar-end">
                         {
                             user ?
+                                <>
+                                <div className="text-white font-semibold text-2xl mr-5">
+                                <p>{user.displayName
+                                    }</p>
+                                </div>
                                 <button onClick={handleSignOut} className="text-2xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-gray-500 hover:rounded-full rounded">Sign Out</button>
+                                </>
                                 :
                                 <Link to="/login">
                                     <button className="text-2xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-gray-500 hover:rounded-full rounded">Login</button>

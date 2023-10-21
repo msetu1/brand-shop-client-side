@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
+import { Toaster } from "react-hot-toast";
 
 const Root = () => {
     return (
@@ -10,6 +10,7 @@ const Root = () => {
             <div className="md:block hidden">
             <Footer></Footer>
             </div>
+            <Toaster></Toaster>
         </div>
     );
 };

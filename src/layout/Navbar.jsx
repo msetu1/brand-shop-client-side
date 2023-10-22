@@ -3,11 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
-    const { user,logOut } = useContext(AuthContext);
-    const handleSignOut=()=>{
+    const { user, logOut } = useContext(AuthContext);
+    const handleSignOut = () => {
         logOut()
-        .then()
-        .catch()
+            .then()
+            .catch()
 
     }
     const links = <>
@@ -81,11 +81,20 @@ const Navbar = () => {
                         {
                             user ?
                                 <>
-                                <div className="text-white font-semibold text-2xl mr-5">
-                                <p>{user.displayName
-                                    }</p>
-                                </div>
-                                <button onClick={handleSignOut} className="text-2xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-gray-500 hover:rounded-full rounded">Sign Out</button>
+                                    <div className="text-white font-semibold text-2xl mr-5 flex gap-2 items-center ">
+
+                                        {
+                                            user &&
+                                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                                <div className="w-10 rounded-full ">
+                                                    <img className="hidden lg:block" src={user?.photoURL} />
+                                                </div>
+                                            </label>
+                                        }
+                                        <p className="hidden lg:block">{user.displayName
+                                        }</p>
+                                    </div>
+                                    <button onClick={handleSignOut} className="text-base lg:text-2xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-gray-500 hover:rounded-full rounded">Sign Out</button>
                                 </>
                                 :
                                 <Link to="/login">

@@ -1,29 +1,37 @@
 
-const Cart = () => {
-    // const{name,brand,type,rating,price,description,photo} =product;
+const Cart = ({ cart }) => {
+    const { brandName, name, type, img, rating, price, shortDescription, _id } = cart;
+
     return (
         <div>
-            {/* <div className="card w-full lg:w-96 h-[550px] bg-gray-200 shadow-xl ">
-                    <figure>
-                    <div className="relative">
-                    <img  className="w-[387px] h-[220px]" src={photo} alt="Shoes" />
-                    </div>
-                    </figure>
-                    <div className="absolute top-44 ml-56">
-                        <h2 className="text-xl font-bold">Brand: <span className="text-[#ea580c] font-bold">{brand}</span></h2>
-                    </div>
-                    <div className="card-body">
-                        <h2 className="card-title text-2xl">{name}</h2>
-                        <h2 className="text-base">Type: {type}</h2>
-                        <div className="flex items-center text-xl font-semibold justify-between mb-3">
-                        <h2>Price: <span className="text-[#ea580c] font-bold">${price}</span></h2>
-                        <h2>Rating: {rating}</h2>
+            <div className="max-w-5xl mx-auto my-16">
+                <div className="card card-side bg-base-100 shadow-xl">
+                    <figure><img className="h-[400px]" src={img} alt="Movie" /></figure>
+                    <div className="card-body mt-10">
+
+                        <h2 className="card-title">{name
+                        }</h2>
+                        <h2>Type: {type}</h2>
+                        <div className="flex items-center justify-between mx-2">
+                            <h1 className="text-xl font-bold">Price: <span className="text-[#ea580c]">${price}</span></h1>
+                            <h1 className="text-xl font-bold">Rating:<span className="text-[#ea580c]">{rating}</span></h1>
+
                         </div>
-                        <p>{description}</p>
-                        
+                        <h2 className="card-title text-2xl">Brand: <span className="text-[#ea580c] font-bold">{brandName}</span></h2>
+                        <p>{shortDescription}</p>
+                        <div className="card-actions justify-end">
+                            <div className="form-control mt-6">
+                                <button className="text-xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Add to Cart </button>
+                            </div>
+                        </div>
+                        <div className="form-control mt-6">
+                            <button className="text-xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Deletet </button>
+                        </div>
                     </div>
-                </div> */}
+                </div>
+            </div>
         </div>
+        
     );
 };
 

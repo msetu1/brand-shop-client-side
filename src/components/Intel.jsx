@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../layout/Navbar";
 import IntelCard from "./IntelCard";
+import IntelSlider from "./IntelSlider";
 
 const Intel = () => {
     const intels=useLoaderData()
@@ -10,8 +11,8 @@ const Intel = () => {
             <div className="bg-[#1e293b]">
                 <Navbar></Navbar>
             </div>
-            <div className="">
-
+            <div className="mb-10">
+<IntelSlider></IntelSlider>
             </div>
             <div className="max-w-5xl my-10 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
             {

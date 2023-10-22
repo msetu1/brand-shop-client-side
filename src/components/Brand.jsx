@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Brand = ({ brand }) => {
-    const { name, id, image } = brand;
+    const { name, image } = brand;
     return (
        <Link to={`/${name.toLowerCase()}`}>
         <div>

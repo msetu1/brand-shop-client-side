@@ -4,12 +4,12 @@ const AppleCart = ({ apple }) => {
     const { brandName, name, type, img, rating, price, shortDescription,_id } = apple;
     return (
         <div>
-            <div className="card  bg-base-100 shadow-xl">
+            <div className="card mx-5 lg:mx-0 bg-base-100 shadow-xl">
 
                 <div className="relative">
                     <figure><img className="h-[270px] rounded w-full" src={img} alt="Shoes" /></figure>
                 </div>
-                <div className="absolute mt-52 ml-80">
+                <div className="absolute mt-52 ml-56 lg:ml-80">
                     <h2 className="card-title text-2xl">Brand: <span className="text-[#ea580c] font-bold">{brandName}</span></h2>
                 </div>
                 <div className="card-body">
@@ -25,14 +25,16 @@ const AppleCart = ({ apple }) => {
                     <div className="flex items-center justify-between mb-3">
                         <Link to={`/details/${_id}`}>
                         <div className="form-control mt-6">
-                            <button className="text-xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Details button</button>
+                            <button className="text-xl text-white px-7 lg:px-16 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Details</button>
                         </div>
                         </Link>
+                        <Link to={`/update/${_id}`}>
                         <div>
                             <div className="form-control mt-6">
-                                <button className="text-xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Update button</button>
+                                <button className="text-xl text-white px-7 lg:px-16 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Update</button>
                             </div>
                         </div>
+                        </Link>
                     </div>
                 </div>
             </div>

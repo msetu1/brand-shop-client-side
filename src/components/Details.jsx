@@ -31,9 +31,9 @@ const Details = () => {
                 <Navbar></Navbar>
             </div>
            <div className="max-w-5xl mx-auto my-16">
-           <div className="card card-side bg-base-100 shadow-xl">
-                <figure><img className="h-[400px]" src={loadedProduct.img} alt="Movie" /></figure>
-                <div className="card-body mt-10">
+           <div className="card card-side bg-base-100 shadow-xl  flex-col lg:flex-row mx-10 lg:mx-0">
+                <figure><img className="h-[250px] lg:h-[400px]" src={loadedProduct.img} alt="Movie" /></figure>
+                <div className="card-body lg:mt-10 mt-0">
                     
                     <h2 className="card-title">{loadedProduct.name
                     }</h2>

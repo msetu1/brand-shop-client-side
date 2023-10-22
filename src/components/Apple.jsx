@@ -7,7 +7,6 @@ import AppleSlider from "./AppleSlider";
 const Apple = () => {
     const apples = useLoaderData()
     const filteredProducts = apples.filter(product => product.brandName === "Apple");
-    console.log(apples);
     return (
 
         <div className="min-h-screen">

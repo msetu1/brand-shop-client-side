@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../layout/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -18,9 +18,9 @@ const Login = () => {
 
         signIn(email, password)
         .then(result => {
-            console.log(result);
+            console.log(result.user);
+            navigate(location?.state?location.state : '/')
             toast.success('Login account is successfully')
-            navigate(location?.state ? location.state : '/')
 
         })
         .catch(error => {

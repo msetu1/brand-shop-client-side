@@ -160,7 +160,7 @@ const Update = () => {
                         </div>
                         <div className=" pb-10 mb-10 w-full flex justify-center">
                             <input
-                                type="submit" value="Update Product"
+                                type="submit" value="Submit"
                                 className="text-2xl text-white px-7 font-bold bg-[#16a34a] hover:bg-black w-1/2 rounded my-10 py-3  " />
                         </div>
                     </form>

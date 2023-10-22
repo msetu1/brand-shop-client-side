@@ -7,9 +7,7 @@ const Root = () => {
         <div>
             
             <Outlet></Outlet>
-            <div className="md:block hidden">
-            <Footer></Footer>
-            </div>
+           <Footer></Footer>
             <Toaster></Toaster>
         </div>
     );

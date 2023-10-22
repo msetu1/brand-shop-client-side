@@ -1,6 +1,6 @@
 
 const Cart = ({ cart }) => {
-    const { brandName, name, type, img, rating, price, shortDescription, _id } = cart;
+    const { brandName, name, type, img, rating, price, shortDescription } = cart;
 
     return (
         <div>

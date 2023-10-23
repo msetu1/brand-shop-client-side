@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 const SocialLogin = () => {
-    const {user,googleLogin}=useContext(AuthContext);
+    const {googleLogin}=useContext(AuthContext);
     const location = useLocation()
     const navigate = useNavigate()
     const from =location.state?.from?.pathname || '/'

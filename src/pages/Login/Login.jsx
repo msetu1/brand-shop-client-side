@@ -69,7 +69,7 @@ const Login = () => {
                                 </div>
                                 <SocialLogin></SocialLogin>
                                 <div>
-                                    <h1 className=" font-semibold mb-3 text-base">Don't have an account ? <NavLink
+                                    <h1 className=" font-semibold mb-3 text-base">Dont have an account ? <NavLink
                                         to="/register"
                                         className={({ isActive, isPending }) =>
                                             isPending ? "pending" : isActive ? "" : "underline underline-offset-2  text-[#ea580c] font-bold text-2xl"

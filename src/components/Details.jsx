@@ -1,6 +1,5 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../layout/Navbar";
-import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
 const Details = () => {

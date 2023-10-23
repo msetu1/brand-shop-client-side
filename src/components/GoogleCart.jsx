@@ -29,7 +29,6 @@ const GoogleCart = ({ google }) => {
                                 <button className="text-xl text-white px-7 lg:px-16 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Details</button>
                             </div>
                         </Link>
-
                         <Link to={`/update/${_id}`}>
                             <div>
                                 <div className="form-control mt-6">

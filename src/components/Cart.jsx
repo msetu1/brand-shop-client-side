@@ -1,7 +1,8 @@
+import toast from "react-hot-toast";
 
-const Cart = ({ cart }) => {
-    const { brandName, name, type, img, rating, price, shortDescription } = cart;
-
+const Cart = ({ cart,handleDeleted }) => {
+    const { brandName, name, _id, type, img, rating, price, shortDescription } = cart;
+console.log(_id);
     return (
         <div>
             <div className="max-w-5xl mx-auto my-16">
@@ -19,19 +20,15 @@ const Cart = ({ cart }) => {
                         </div>
                         <h2 className="card-title text-2xl">Brand: <span className="text-[#ea580c] font-bold">{brandName}</span></h2>
                         <p>{shortDescription}</p>
-                        <div className="card-actions justify-end">
-                            <div className="form-control mt-6">
-                                <button className="text-xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Add to Cart </button>
-                            </div>
-                        </div>
-                        <div className="form-control mt-6">
-                            <button className="text-xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Deletet </button>
+
+                        <div className="form-control">
+                            <button onClick={()=>handleDeleted(_id)} className="text-xl text-white px-7 py-2 font-bold bg-[#16a34a] hover:bg-black  rounded">Deletet </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     );
 };
 

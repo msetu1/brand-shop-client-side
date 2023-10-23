@@ -2,9 +2,13 @@ import Navbar from "../../layout/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+
 const Register = () => {
-    const {createUser}=useContext(AuthContext)
+    const { createUser } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from =location.state?.from?.pathname || '/'
 
     const handleRegister = e => {
         e.preventDefault()
@@ -27,15 +31,16 @@ const Register = () => {
             toast.error('Your password have at least one lower case charecters')
             return
         }
-// create user 
-        createUser(email,password)
-        .then(res=>{
-            console.log(res.user);
-            toast.success('user created successfully')
-        })
-        .catch(error=>{
-            toast.error(error.message)
-        })
+        // create user 
+        createUser(email, password)
+            .then(res => {
+                console.log(res.user);
+                toast.success('user created successfully')
+                navigate(from,{replace:true})
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
 
     }
     return (
@@ -58,7 +63,7 @@ const Register = () => {
                                     <input type="text"
                                         placeholder="Your Name"
                                         name="name"
-                                        className="input input-bordered bg-[#dbeafe]"  />
+                                        className="input input-bordered bg-[#dbeafe]" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -67,7 +72,7 @@ const Register = () => {
                                     <input type="photo"
                                         placeholder="photo URL"
                                         name="photo"
-                                        className="input input-bordered bg-[#dbeafe]"  />
+                                        className="input input-bordered bg-[#dbeafe]" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -85,7 +90,7 @@ const Register = () => {
                                     <input
                                         type="password"
                                         name="password"
-                                        placeholder="Your Password" className="input input-bordered bg-[#dbeafe] text-black"  />
+                                        placeholder="Your Password" className="input input-bordered bg-[#dbeafe] text-black" />
 
                                     <div className="-ml-2.5">
 

@@ -7,7 +7,9 @@ import toast from "react-hot-toast";
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
-    const navigate = useNavigate();
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from =location.state?.from?.pathname || '/'
 
     const handleLogin = e => {
         e.preventDefault()
@@ -19,7 +21,7 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             console.log(result.user);
-            navigate(location?.state?location.state : '/')
+            navigate(from,{replace:true})
             toast.success('Login account is successfully')
 
         })

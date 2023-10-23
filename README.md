@@ -1,6 +1,6 @@
 # Brand-Shop
-## Client Side Private Link:
-## Server Side Private Link:
+## Client Side Live Link:
+## Server Side  Link:
 
 
 
@@ -19,8 +19,19 @@
 
 ## 1: Home page a navbar, banner, footer and 6 types of brand :
 ### Explain:
+#### Navbar:
+Nabbar use for (Home, add product, my cart,login, logo and name, login button) . The "Home" link is a common feature in a navbar, serving as a direct way for users to return to the main page or starting point of a website, enhancing navigation.home page a full website Show on the borwser.The "Add Product" link provides users with the ability to add new products to an e-commerce or content management system, facilitating content creation. The "My Cart" link gives users access to their shopping cart, a crucial element for add to card card show websites, allowing customers to view and manage items they intend to purchase.The "Login" link directs users to the login page, enabling access to personalized content, user accounts, and enhancing security by verifying user identity.Displaying a logo and website name in the navbar helps establish brand identity, improves site recognition, and offers a clickable link often used for returning to the homepage.The "Login" button typically accompanies the "Login" link, offering an additional way for users to access their accounts or sign in, enhancing user experience.
+#### banner :
+A banner is a prominent graphical element often positioned at the top of a web page or within a website's layout. It serves several purposes, including providing important information and visual appeal. Here's an explanation of the elements you mentioned for a banner:The "Name" in this context refers to the banner's title or headline, which is "Technology and Electronics."
+This name succinctly communicates the theme or focus of the content that follows, making it clear to visitors what to expect from the webpage or section.The "Image" in a banner is a visual element, often a large and eye-catching picture or graphic.
+It is used to visually represent the content or theme of the webpage or to create an appealing and engaging visual experience.
+The choice of image is crucial, as it can set the tone for the entire page and capture the user's attention.and "read more" button added.
 
+#### footer:
+Footers often contain navigation links that help users move to different sections of the website or access important pages like the About Us, Contact, Privacy Policy, and Terms of Service. These links improve website usability and user experience. flex-col and large device flex-row use .and 3 nav link added (logo,our service,support,contact)
 
+#### 6 brand:
+(apple,sony,samsung,intel,google,xiaomi) show on the browser.
 
 ## 2: Six Type of Brand discussion :
 ### Explain:

@@ -3,39 +3,39 @@ import Swal from "sweetalert2";
 import Navbar from "../../layout/Navbar";
 
 const AddProduct = () => {
-    const handleAddProduct=e=>{
+    const handleAddProduct = e => {
         e.preventDefault();
-        const form =e.target;
-        const name =form.name.value;
-        const brandName =form.brandName.value;
-        const type =form.type.value;
-        const rating =form.rating.value;
-        const price =form.price.value;
-        const shortDescription =form.shortDescription.value;
-        const img =form.img.value;
+        const form = e.target;
+        const name = form.name.value;
+        const brandName = form.brandName.value;
+        const type = form.type.value;
+        const rating = form.rating.value;
+        const price = form.price.value;
+        const shortDescription = form.shortDescription.value;
+        const img = form.img.value;
 
-        const newProducts={name,brandName,type,rating,price,shortDescription,img}
-    console.log(newProducts);
+        const newProducts = { name, brandName, type, rating, price, shortDescription, img }
+        console.log(newProducts);
 
-    fetch('http://localhost:5000/product',{
-        method:'POST',
-        headers:{
-            'content-type':'application/json'
-        },
-        body:JSON.stringify(newProducts)
-    })
-.then(res=>res.json())
-.then(data=>{
-    console.log(data);
-    if(data.insertedId){
-        Swal.fire({
-            title: 'Success',
-            text: ' Product added Successfully',
-            icon: 'success',
-            confirmButtonText: 'Cool'
-          })
-    }
-})
+        fetch('https://brand-shop-server-side-ruby.vercel.app/product', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newProducts)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success',
+                        text: ' Product added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
 
     }
     return (
@@ -115,7 +115,7 @@ const AddProduct = () => {
                                     className="input input-bordered w-full bg-[#dbeafe]" />
                             </div>
                         </div>
-                       
+
                         <div className="form-control w-full ">
                             <label className="label">
                                 <span className="label-text text-xl font-semibold text-white">Short Description :</span>

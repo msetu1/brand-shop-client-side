@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addProduct",
-        element:<PrivateRoute>
+        element: <PrivateRoute>
           <AddProduct></AddProduct>
         </PrivateRoute>,
       },
@@ -36,6 +36,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <MyCart></MyCart>
         </PrivateRoute>,
+        loader: () => fetch('https://brand-shop-server-side-ruby.vercel.app/cartproduct/')
 
       },
       {
@@ -48,54 +49,54 @@ const router = createBrowserRouter([
       },
       {
         path: "/apple",
-        element:<Apple></Apple>,
-        loader: () => fetch('http://localhost:5000/product'),
-       
+        element: <Apple></Apple>,
+        loader: () => fetch('https://brand-shop-server-side-ruby.vercel.app/product'),
+
       },
-     
+
       {
         path: "/samsung",
         element: <Samsung></Samsung>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://brand-shop-server-side-ruby.vercel.app/product')
       },
       {
         path: "/sony",
         element: <Sony></Sony>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://brand-shop-server-side-ruby.vercel.app/product')
       },
       {
         path: "/google",
         element: <Google></Google>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://brand-shop-server-side-ruby.vercel.app/product')
       },
       {
         path: "/intel",
         element: <Intel></Intel>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://brand-shop-server-side-ruby.vercel.app/product')
       },
       {
         path: "/xiaomi",
         element: <Xiaomi></Xiaomi>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://brand-shop-server-side-ruby.vercel.app/product')
       },
       {
         path: "/details/:id",
         element: <PrivateRoute>
           <Details></Details>
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-side-ruby.vercel.app/product/${params.id}`)
       },
       {
         path: "/myCart",
         element: <MyCart></MyCart>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://brand-shop-server-side-ruby.vercel.app/product')
       },
       {
         path: "/update/:id",
         element: <PrivateRoute>
           <Update></Update>
         </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-side-ruby.vercel.app/product/${params.id}`)
       },
 
     ],
